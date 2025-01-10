@@ -9,8 +9,8 @@ function Navbar() {
           <span className="text-3xl font-bold text-[#1a1a1a]">Mett</span>
         </Link>
       </div>
-      <nav>
-        <ul className="flex justify-center items-center gap-9 text-md font-semibold cursor-pointer uppercase text-[#1a1a1a]">
+      <nav className="flex justify-center items-center gap-5">
+        <ul className="hidden md:flex justify-center items-center gap-9 text-md font-semibold cursor-pointer uppercase text-[#1a1a1a]">
           <Link to="/contact">
             <li className="hover:text-gray-500">Contact</li>
           </Link>
@@ -20,10 +20,10 @@ function Navbar() {
           <Link to="about">
             <li className="hover:text-gray-500">About</li>
           </Link>
-          <button className="bg-blue-700 rounded-md px-4 py-2 hover:bg-blue-400 text-white">
-            Get Started
-          </button>
         </ul>
+        <button className="bg-gradient-to-t from-[#000957] to-[#344CB7] rounded-md px-4 py-2 hover:from-[#344CB7] hover:to-[#000957]  text-white">
+          Get Started
+        </button>
       </nav>
     </header>
   );

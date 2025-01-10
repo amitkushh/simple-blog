@@ -43,7 +43,7 @@ function Blog() {
     <section>
       <div className="px-20 mx-auto py-28 flex flex-col justify-center items-center border-b-8 border-black">
         <h2 className="text-4xl font-semibold mb-10">Find Favorite Blogs</h2>
-        <div className="grid grid-cols-3 gap-4 ">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {blogs.map((blog, index) => (
             <div
               className="flex flex-col bg-slate-200 rounded-md p-10 "
@@ -57,7 +57,7 @@ function Blog() {
                   {blog.title}
                 </p>
                 <p className="mb-4">{blog.para}</p>
-                <span className="bg-blue-700 text-white px-2 py-1 rounded-full text-xl">
+                <span className="bg-blue-900 text-white px-4 py-1 rounded-full text-xl">
                   {blog.category}
                 </span>
               </div>
