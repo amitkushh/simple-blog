@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center my-10">
       <div className=" flex flex-col justify-center items-center p-10 px-20 bg-blue-300 rounded-lg ">
         <h1 className="text-2xl font-semibold mb-5 text-white ">Contact Us</h1>
         <form

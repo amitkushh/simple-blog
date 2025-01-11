@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -11,19 +11,36 @@ function Navbar() {
       </div>
       <nav className="flex justify-center items-center gap-5">
         <ul className="hidden md:flex justify-center items-center gap-9 text-md font-semibold cursor-pointer uppercase text-[#1a1a1a]">
-          <Link to="/contact">
-            <li className="hover:text-gray-500">Contact</li>
-          </Link>
-          <Link to="/feature">
-            <li className="hover:text-gray-500">Features</li>
-          </Link>
-          <Link to="about">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${isActive ? "text-blue-800" : "text-black"}`
+            }
+          >
             <li className="hover:text-gray-500">About</li>
-          </Link>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${isActive ? "text-blue-800" : "text-black"}`
+            }
+          >
+            <li className="hover:text-gray-500">Contact</li>
+          </NavLink>
+          <NavLink
+            to="/features"
+            className={({ isActive }) =>
+              `${isActive ? "text-blue-800" : "text-black"}`
+            }
+          >
+            <li className="hover:text-gray-500">Features</li>
+          </NavLink>
         </ul>
-        <button className="bg-gradient-to-t from-[#000957] to-[#344CB7] rounded-md px-4 py-2 hover:from-[#344CB7] hover:to-[#000957]  text-white">
-          Get Started
-        </button>
+        <Link to="/sign-up">
+          <button className="bg-gradient-to-t from-[#000957] to-[#344CB7] rounded-md px-4 py-2 hover:from-[#344CB7] hover:to-[#000957]  text-white">
+            Get Started
+          </button>
+        </Link>
       </nav>
     </header>
   );

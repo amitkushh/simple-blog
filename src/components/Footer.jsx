@@ -16,14 +16,14 @@ function Footer() {
         <div className="pr-24 flex flex-col gap-3">
           <span className="text-2xl font-semibold">Pages</span>
           <ul className="flex flex-col  text-md font-semibold cursor-pointer uppercase text-[#1a1a1a] gap-3">
+            <Link to="about">
+              <li className="hover:text-gray-500">About</li>
+            </Link>
             <Link to="/contact">
               <li className="hover:text-gray-500">Contact</li>
             </Link>
-            <Link to="/feature">
+            <Link to="/features">
               <li className="hover:text-gray-500">Features</li>
-            </Link>
-            <Link to="about">
-              <li className="hover:text-gray-500">About</li>
             </Link>
           </ul>
         </div>
