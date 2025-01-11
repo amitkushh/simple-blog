@@ -1,5 +1,5 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AlignJustify, X } from "lucide-react";
 
 function Navbar() {
   return (
@@ -9,7 +9,7 @@ function Navbar() {
           <span className="text-3xl font-bold text-[#1a1a1a]">Mett</span>
         </Link>
       </div>
-      <nav className="flex justify-center items-center gap-5">
+      <nav className="flex justify-center items-center gap-5 ml-8">
         <ul className="hidden md:flex justify-center items-center gap-9 text-md font-semibold cursor-pointer uppercase text-[#1a1a1a]">
           <NavLink
             to="/about"
