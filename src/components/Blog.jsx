@@ -41,8 +41,10 @@ function Blog() {
   ];
   return (
     <section>
-      <div className="px-20 mx-auto py-28 flex flex-col justify-center items-center border-b-8 border-black">
-        <h2 className="text-4xl font-semibold mb-10">Find Favorite Blogs</h2>
+      <div className="px-10 mx-auto py-20 flex flex-col justify-center items-center border-b-2 border-black">
+        <h2 className="text-4xl font-semibold mb-10 text-center">
+          Find Favorite Blogs
+        </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {blogs.map((blog, index) => (
             <div

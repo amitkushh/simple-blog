@@ -3,7 +3,7 @@ import { AlignJustify, X } from "lucide-react";
 
 function Navbar() {
   return (
-    <header className=" flex justify-between items-center h-20 px-20">
+    <header className="flex justify-between items-center h-20 px-10">
       <div>
         <Link to="/">
           <span className="text-3xl font-bold text-[#1a1a1a]">Mett</span>
