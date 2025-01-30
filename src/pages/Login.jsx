@@ -15,14 +15,14 @@ function Login() {
             name=""
             id=""
             placeholder="Enter your email"
-            className="py-2 w-full pl-2 rounded-md"
+            className="py-2 w-full pl-2 rounded-md outline-none"
           />
           <input
             type="password"
             name=""
             id=""
             placeholder="Enter your password"
-            className="py-2 w-full pl-2 rounded-md"
+            className="py-2 w-full pl-2 rounded-md outline-none"
           />
           <button className="bg-blue-700 mt-5 rounded-md px-4 py-2 hover:bg-blue-400 text-white">
             Login

@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="px-20 my-8">
+    <div className="px-10 md:px-20 my-8">
       <h1 className="capitalize text-center mb-6 text-2xl font-semibold">
         About
       </h1>
