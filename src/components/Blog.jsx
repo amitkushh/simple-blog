@@ -7,7 +7,11 @@ function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_FETCH_DATA)
+    fetch(
+      `https://newsapi.org/v2/everything?q=tesla&from=2025-01-17&sortBy=publishedAt&apiKey=${
+        import.meta.env.VITE_FETCH_DATA
+      }`
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Https error: ${response.status}`);
