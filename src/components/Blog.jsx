@@ -1,44 +1,32 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function Blog() {
-  const blogs = [
-    {
-      img: "",
-      category: "city",
-      title: "top 10 cities of india",
-      para: "Here i will show you top 10 cities of india, where you can live.",
-    },
-    {
-      img: "",
-      category: "city",
-      title: "top 15 cities of usa",
-      para: " Here i will show you top 10 cities of india, where you can live.",
-    },
-    {
-      img: "",
-      category: "city",
-      title: "top 5 cities of uk",
-      para: "Here i will show you top 10 cities of india, where you can live.",
-    },
-    {
-      img: "",
-      category: "city",
-      title: "top 10 cities of india",
-      para: "Here i will show you top 10 cities of india, where you can live.",
-    },
-    {
-      img: "",
-      category: "city",
-      title: "top 10 cities of india",
-      para: "Here i will show you top 10 cities of india, where you can live.",
-    },
-    {
-      img: "",
-      category: "city",
-      title: "top 10 cities of india",
-      para: "Here i will show you top 10 cities of india, where you can live.",
-    },
-  ];
+  const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(import.meta.env.VITE_FETCH_DATA)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Https error: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((json) => {
+        setArticles(json.articles);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <h3>Loading...</h3>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <section>
       <div className="px-10 mx-auto py-20 flex flex-col justify-center items-center border-b-2 border-black">
@@ -46,22 +34,23 @@ function Blog() {
           Find Favorite Blogs
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {blogs.map((blog, index) => (
+          {articles.map((article, index) => (
             <div
               className="flex flex-col bg-slate-200 rounded-md p-10 "
               key={index}
             >
               <div>
-                <img src={blog.img} alt="" />
+                <img
+                  src={article.urlToImage}
+                  alt={article.title}
+                  className="mb-5"
+                />
               </div>
               <div className="flex flex-col items-start">
                 <p className="text-2xl capitalize font-semibold mb-3">
-                  {blog.title}
+                  {article.title}
                 </p>
-                <p className="mb-4">{blog.para}</p>
-                <span className="bg-blue-900 text-white px-4 py-1 rounded-full text-xl">
-                  {blog.category}
-                </span>
+                <p className="mb-4">{article.description}</p>
               </div>
             </div>
           ))}
